@@ -14,6 +14,7 @@ function ExportAttendance({ data }) {
   const [showModal, setShowModal] = useState(false);
 
   const meeting = useSelector((state) => state.filter.meet_number);
+
   const dispatch = useDispatch();
 
   const [allData, setAllData] = useState([]);
@@ -766,14 +767,7 @@ function ExportAttendance({ data }) {
 
     XLSX.utils.book_append_sheet(wb, ws, "Sheet1");
 
-    XLSX.writeFile(
-      wb,
-      "Attendance " +
-        data.class.class_name +
-        " " +
-        data.course.course_name +
-        ".xlsx"
-    );
+    XLSX.writeFile(wb, "Attendance " + data.class.class_name + " " + data.course.course_name + ".xlsx");
   };
   const exportMeet = () => {
     var wb = XLSX.utils.book_new(),
@@ -781,16 +775,7 @@ function ExportAttendance({ data }) {
 
     XLSX.utils.book_append_sheet(wb, ws, "Sheet1");
 
-    XLSX.writeFile(
-      wb,
-      "Attendance-" +
-        meeting +
-        " " +
-        data.class.class_name +
-        " " +
-        data.course.course_name +
-        ".xlsx"
-    );
+    XLSX.writeFile(wb, "Attendance-" + meeting + " " + data.class.class_name + " " + data.course.course_name + ".xlsx");
   };
 
   return (
@@ -806,17 +791,12 @@ function ExportAttendance({ data }) {
       </button>
 
       {showModal && (
-        <div
-          id="modalAddStudenttoClass"
-          tabIndex="-1"
-          className="overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full"
-        >
+        <div id="modalAddStudenttoClass" tabIndex="-1" className="overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full">
           <div className="relative p-4 mx-auto w-full max-w-6xl h-full md:h-auto">
             <div className="relative bg-white rounded-lg shadow dark:bg-gray-700">
               <div className="flex justify-between items-center p-5 rounded-t border-b dark:border-gray-600">
                 <h3 className="text-xl font-medium text-gray-900 dark:text-white">
-                  Download Attendance {data.class.class_name} -{" "}
-                  {data.course.course_name}
+                  Download Attendance {data.class.class_name} - {data.course.course_name}
                 </h3>
 
                 <button
@@ -828,11 +808,7 @@ function ExportAttendance({ data }) {
                   className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
                   data-modal-toggle="large-modal"
                 >
-                  <FaRegWindowClose
-                    id="cancel"
-                    className="w-8 dark:text-white text-primary-blue"
-                    size={25}
-                  />
+                  <FaRegWindowClose id="cancel" className="w-8 dark:text-white text-primary-blue" size={25} />
                 </button>
               </div>
               <div className="flex lg:flex-row flex-col px-6 py-2 item-center justify-center gap-3">
@@ -847,9 +823,7 @@ function ExportAttendance({ data }) {
                   </button>
                 </div>
                 <div className="lg:px-6 px-1 py-11 lg:w-[40%] w-full flex flex-col items-center gap-y-5 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
-                  <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-                    Download All Meetings
-                  </h5>
+                  <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">Download All Meetings</h5>
                   <button
                     onClick={exportAll}
                     className="flex w-full justify-center py-2 px-3 text-sm font-medium text-center text-white bg-primary-blue rounded-lg hover:bg-secondary-blue focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-primary-blue dark:hover:bg-secondary-blue dark:focus:ring-blue-800"

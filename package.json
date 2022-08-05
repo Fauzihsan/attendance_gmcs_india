@@ -13,6 +13,7 @@
     "chart.js": "^3.8.0",
     "dotenv": "^16.0.1",
     "flowbite": "^1.4.7",
+    "flowbite-datepicker": "^1.2.2",
     "flowbite-react": "^0.0.25",
     "graphql": "^16.5.0",
     "js-cookie": "^3.0.1",

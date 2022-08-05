@@ -310,7 +310,7 @@ function AttendanceTable({ schedule_data, role }) {
 
   return (
     <>
-      <p className="p-1">Total Student : {attendances?.length !== 0 ? attendances?.length : "0"}</p>
+      <p className="p-1 text-primary-grey dark:text-white">Total Student : {attendances?.length !== 0 ? attendances?.length : "0"}</p>
       <div className="relative h-96 overflow-x-auto shadow-md sm:rounded-lg">
         <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
           <thead className="text-xs sticky top-0 text-gray-700 uppercase bg-primary-white2 dark:bg-primary-black dark:text-gray-400">

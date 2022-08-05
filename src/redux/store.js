@@ -3,6 +3,7 @@ import searchReducer from "./searchSlice";
 import filterReducer from "./filterSlice";
 import modalReducer from "./modalSlice";
 import prodiReducer from "./prodiSlice";
+import dateReducer from "./dateSlice";
 
 export default configureStore({
   reducer: {
@@ -10,5 +11,6 @@ export default configureStore({
     filter: filterReducer,
     modal: modalReducer,
     prodi: prodiReducer,
+    date: dateReducer,
   },
 });
